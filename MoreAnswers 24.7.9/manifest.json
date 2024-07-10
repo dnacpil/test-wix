@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "More Answers",
+  "description": "Shortcuts for Support QA within answers \n - Scroll to Escalation Note \n - Open relevant site dashboard (When impersonated) \n - Open Jira Runbook with Site Details \n - Copy relevant MSID from the ticket to the clipboard",
+  "version": "24.6.12",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://wix.wixanswers.com/app/helpdesk/one-inbox*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://wix.wixanswers.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

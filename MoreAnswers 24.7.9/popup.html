@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>More Answers</title>
+    <style>
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        width: 250px;
+        background-color: #f6f6f6;
+        color: #333;
+      }
+      h1 {
+        font-size: 18px;
+        margin: 0 0 10px 0; /* Reduce margin to decrease gap */
+        color: #0a0a0a;
+      }
+      .toggle-container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px; /* Reduce margin-top to decrease gap */
+        background: #fff;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .toggle-label {
+        margin-left: 10px;
+        font-size: 14px;
+        color: #333;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 34px;
+        height: 20px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 20px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background-color: #07c;
+      }
+      input:checked + .slider:before {
+        transform: translateX(14px);
+      }
+      .instructions {
+        font-size: 12px;
+        margin-top: 10px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>More Answers</h1>
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="runbookToggle">
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">Show Runbook Shortcut</span>
+    </div>
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="dropdownToggle">
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">Experimental Dropdown</span>
+    </div>
+    <div class="instructions">
+      This extension adds more buttons to the top of chats in Answers. Toggle which buttons appear here.
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
